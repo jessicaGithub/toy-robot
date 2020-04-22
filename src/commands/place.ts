@@ -16,7 +16,8 @@ export default class Place extends Command {
     const yVal = parseInt(args.yCoord, 8)
     const fVal = String(args.facing)
     if (xVal <= 4 && yVal <= 4 && fVal !== null) {
-      // moveHistoryAPI.add(xVal,yVal,fVal)
+      moveHistoryAPI.clearall()
+      moveHistoryAPI.add(xVal, yVal, fVal)
       this.log('Success!')
     } else {
       this.log('Cannot place the robot outside of the grid!')

@@ -1,8 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import * as os from 'os'
 
-const myMove = path.join(os.homedir(), 'api', 'movehistory.json')
+const moveHistoryFile = path.join(__dirname, 'movehistory.json')
 
 interface MoveHistory {
   x: number;
@@ -14,20 +13,24 @@ class MoveHistoryAPI {
   private myMoves: MoveHistory[] = []
 
   constructor() {
-    this.myMoves = JSON.parse(fs.readFileSync(myMove, {
+    this.myMoves = JSON.parse(fs.readFileSync(moveHistoryFile, {
       encoding: 'utf-8',
     }))
   }
 
   private saveMyMove() {
-    // make folder for the first run
-    if (!fs.existsSync(path.dirname(myMove))) {
-      fs.mkdirSync(path.dirname(myMove))
+    if (!fs.existsSync(path.dirname(moveHistoryFile))) {
+      fs.mkdirSync(path.dirname(moveHistoryFile))
     }
     const data = JSON.stringify(this.myMoves)
-    fs.writeFileSync(myMove, data, {
+    fs.writeFileSync(moveHistoryFile, data, {
       encoding: 'utf-8',
     })
+  }
+
+  clearall() {
+    this.myMoves.length = 0
+    this.saveMyMove()
   }
 
   add(x: number, y: number, face: string) {
