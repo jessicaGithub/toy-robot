@@ -15,7 +15,7 @@ class MoveHistoryAPI {
 
   constructor() {
     this.myMoves = JSON.parse(fs.readFileSync(myMove, {
-      encoding: 'utf-8'
+      encoding: 'utf-8',
     }))
   }
 
@@ -26,15 +26,15 @@ class MoveHistoryAPI {
     }
     const data = JSON.stringify(this.myMoves)
     fs.writeFileSync(myMove, data, {
-      encoding: 'utf-8'
+      encoding: 'utf-8',
     })
   }
 
-  add( x: number, y: number, face: string) {
+  add(x: number, y: number, face: string) {
     const newMove: MoveHistory = {
-        x: x,
-        y: y,
-        face: face
+      x: x,
+      y: y,
+      face: face,
     }
     this.myMoves.push(newMove)
     this.saveMyMove()
@@ -52,8 +52,7 @@ class MoveHistoryAPI {
   get(index: number): MoveHistory {
     return this.myMoves[index]
   }
-
 }
 
-const api = new MoveHistoryAPI
+const api = new MoveHistoryAPI()
 export default api

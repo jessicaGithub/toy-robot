@@ -1,5 +1,5 @@
 import {Command} from '@oclif/command'
-import MoveHistoryAPI from '../../api/moveHistoryAPI'
+import moveHistoryAPI from '../api/move-history-api'
 
 export default class Place extends Command {
   static description = 'This command is used for placing the toy robot on a 5x5 grid.'
@@ -12,13 +12,14 @@ export default class Place extends Command {
 
   async run() {
     const {args} = this.parse(Place)
-    const xVal = parseInt(args.xCoord)
-    const yVal = parseInt(args.yCoord)
+    const xVal = parseInt(args.xCoord, 8)
+    const yVal = parseInt(args.yCoord, 8)
     const fVal = String(args.facing)
-    if (xVal <= 4 && yVal <= 4 && fVal != null ) {
+    if (xVal <= 4 && yVal <= 4 && fVal !== null) {
+      // moveHistoryAPI.add(xVal,yVal,fVal)
       this.log('Success!')
     } else {
-      this.error('Cannot place the robot outside of the grid!')
+      this.log('Cannot place the robot outside of the grid!')
     }
   }
 }
