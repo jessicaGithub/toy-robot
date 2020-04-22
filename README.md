@@ -1,4 +1,4 @@
-robocop
+Toy-Robot Test
 =======
 
 Command line toy robot simulator
@@ -10,19 +10,22 @@ Command line toy robot simulator
 ```sh-session
 $ npm install -g robocop
 $ npm link
-$ robocop COMMAND
+$ toy-robot COMMAND
 running command...
-$ robocop (-v|--version|version)
-robocop/0.0.0 darwin-x64 node-v11.10.1
-$ robocop --help [COMMAND]
+$ toy-robot (-v|--version|version)
+toy-robot/0.0.0 darwin-x64 node-v11.10.1
+$ toy-robot --help [COMMAND]
 USAGE
-  $ robocop COMMAND
+  $ toy-robot COMMAND
 ...
 ```
 
 # Commands
-PLACE X,Y,F
-MOVE
-LEFT
-RIGHT
-REPORT
+- toy-robot PLACE X,Y,F
+- toy-robot MOVE
+- toy-robot LEFT
+- toy-robot RIGHT
+- toy-robot REPORT
+
+# Test commands
+- npm test
