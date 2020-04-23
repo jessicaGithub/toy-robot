@@ -1,31 +1,11 @@
-import {Command, flags} from '@oclif/command'
+import { Command } from "@oclif/command";
+import moveHistoryAPI from "../api/move-history-api";
 
 export default class Hello extends Command {
-  static description = 'describe the command here'
-
-  static examples = [
-    `$ toy-robot hello
-hello world from ./src/hello.ts!
-`,
-  ]
-
-  static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
-  }
-
-  static args = [{name: 'file'}]
+  static description = "It is nice to say hello when you first meet a robot";
 
   async run() {
-    const {args, flags} = this.parse(Hello)
-
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from ./src/commands/hello.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    moveHistoryAPI.clearall();
+    this.log("Robot says: Hello to you too! I'm ready to be placed now!");
   }
 }

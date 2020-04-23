@@ -1,12 +1,12 @@
-Toy-Robot Test
-=======
+# Toy-Robot Test
 
 Command line toy robot simulator
 
-* [Usage](#usage)
-* [Commands](#commands)
+- [Usage](#usage)
+- [Commands](#commands)
 
 # Usage
+
 ```sh-session
 $ npm install -g robocop
 $ npm link
@@ -21,6 +21,7 @@ USAGE
 ```
 
 # Commands
+
 - toy-robot PLACE X,Y,F
 - toy-robot MOVE
 - toy-robot LEFT
@@ -28,4 +29,5 @@ USAGE
 - toy-robot REPORT
 
 # Test commands
+
 - npm test

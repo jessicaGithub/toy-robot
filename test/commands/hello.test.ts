@@ -4,14 +4,8 @@ describe('hello', () => {
   test
   .stdout()
   .command(['hello'])
-  .it('runs hello', ctx => {
-    expect(ctx.stdout).to.contain('hello world')
+  .it('runs toy-robot hello', ctx => {
+    expect(ctx.stdout).to.contain('Hello to you too!')
   })
 
-  test
-  .stdout()
-  .command(['hello', '--name', 'jeff'])
-  .it('runs hello --name jeff', ctx => {
-    expect(ctx.stdout).to.contain('hello jeff')
-  })
 })
