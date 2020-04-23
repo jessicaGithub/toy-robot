@@ -6,6 +6,6 @@ export default class Hello extends Command {
 
   async run() {
     moveHistoryAPI.clearall();
-    this.log("Robot says: Hello to you too! I'm ready to be placed now!");
+    this.log(`Robot says: Hello to you too! I'm ready to be placed now!`);
   }
 }
