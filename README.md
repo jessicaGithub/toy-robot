@@ -8,13 +8,10 @@ Command line toy robot simulator
 # Usage
 
 ```sh-session
-$ npm install -g robocop
+$ npm install
 $ npm link
-$ toy-robot COMMAND
-running command...
-$ toy-robot (-v|--version|version)
-toy-robot/0.0.0 darwin-x64 node-v11.10.1
-$ toy-robot --help [COMMAND]
+$ toy-robot hello
+
 USAGE
   $ toy-robot COMMAND
 ...
