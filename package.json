@@ -4,19 +4,27 @@
   "version": "0.0.0",
   "author": "jessicaGithub @jessicaGithub",
   "bin": {
-    "toy-robot": "./bin/run"
+    "hello": "./bin/runhello.js",
+    "place": "./bin/runplace.js",
+    "move": "./bin/runmove.js",
+    "left": "./bin/runleft.js",
+    "right": "./bin/runright.js",
+    "report": "./bin/runreport.js"
   },
   "bugs": "https://github.com/jessicaGithub/toy-robot/issues",
   "dependencies": {
     "@oclif/command": "^1.5.20",
     "@oclif/config": "^1.15.1",
     "@oclif/plugin-help": "^2.2.3",
+    "inquirer": "^7.1.0",
+    "shelljs": "^0.8.3",
     "tslib": "^1.11.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
     "@oclif/test": "^1.2.5",
     "@types/chai": "^4.2.11",
+    "@types/inquirer": "^6.5.0",
     "@types/mocha": "^5.2.7",
     "@types/node": "^10.17.21",
     "chai": "^4.2.0",

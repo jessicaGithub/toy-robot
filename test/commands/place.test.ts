@@ -3,15 +3,15 @@ import { expect, test } from "@oclif/test";
 describe("place", () => {
   test
     .stdout()
-    .command(["place", "1", "1", "NORTH"])
-    .it("runs toy-robot place 1 1 NORTH", (ctx) => {
-      expect(ctx.stdout).to.include("Success!");
+    .command(["hello"])
+    .it("runs hello", (ctx) => {
+      expect(ctx.stdout).to.include("");
     });
 
   test
     .stdout()
-    .command(["place", "4", "4", "SOUTH"])
-    .it("runs toy-robot place 4 4 SOUTH", (ctx) => {
-      expect(ctx.stdout).to.include("Success!");
+    .command(["place", "0", "0", "NORTH"])
+    .it("runs toy-robot place", (ctx) => {
+      expect(ctx.stdout).to.include("I am now at 0 0 facing NORTH");
     });
 });

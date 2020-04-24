@@ -1,4 +1,4 @@
-# Toy-Robot Test
+# Toy-Robot
 
 Command line toy robot simulator
 
@@ -10,20 +10,20 @@ Command line toy robot simulator
 ```sh-session
 $ npm install
 $ npm link
-$ toy-robot hello
+
 
 USAGE
-  $ toy-robot COMMAND
+  $ COMMAND
 ...
 ```
 
 # Commands
 
-- toy-robot PLACE X,Y,F
-- toy-robot MOVE
-- toy-robot LEFT
-- toy-robot RIGHT
-- toy-robot REPORT
+- PLACE
+- MOVE
+- LEFT
+- RIGHT
+- REPORT
 
 # Test commands
 

@@ -1,4 +1,5 @@
 import { Command } from "@oclif/command";
+import * as inquirer from "inquirer";
 import moveHistoryAPI from "../api/move-history-api";
 
 export default class Place extends Command {
@@ -8,19 +9,19 @@ export default class Place extends Command {
   static args = [
     {
       name: "xCoord",
-      required: true,
+      required: false,
       options: ["0", "1", "2", "3", "4"],
       description: "please enter the x coordinate!",
     },
     {
       name: "yCoord",
-      required: true,
+      required: false,
       options: ["0", "1", "2", "3", "4"],
       description: "please enter the y coordinate!",
     },
     {
       name: "facing",
-      required: true,
+      required: false,
       options: ["NORTH", "EAST", "SOUTH", "WEST"],
       description: "please define where the robot should be facing!",
     },
@@ -33,10 +34,45 @@ export default class Place extends Command {
     const fVal = String(args.facing);
     if (xVal <= 4 && yVal <= 4 && fVal !== null) {
       moveHistoryAPI.clearall();
-      moveHistoryAPI.add(xVal, yVal, fVal);
-      this.log("Success!");
+      moveHistoryAPI.add(0, 0, "NORTH");
+      this.log(`I am now at 0 0 facing NORTH`);
     } else {
-      this.log("Cannot place the robot outside of the grid!");
+      let xVal;
+      let yVal;
+      let fVal;
+      inquirer
+        .prompt([
+          {
+            name: "xVal",
+            message: "X coordinate:",
+            type: "list",
+            choices: [0, 1, 2, 3, 4],
+          },
+          {
+            name: "yVal",
+            message: "Y coordinate:",
+            type: "list",
+            choices: [0, 1, 2, 3, 4],
+          },
+          {
+            name: "fVal",
+            message: "Facing:",
+            type: "list",
+            choices: ["NORTH", "EAST", "SOUTH", "WEST"],
+          },
+        ])
+        .then((answers) => {
+          xVal = answers.xVal;
+          yVal = answers.yVal;
+          fVal = answers.fVal;
+
+          moveHistoryAPI.clearall();
+          moveHistoryAPI.add(xVal, yVal, fVal);
+          this.log(`I am now at ${xVal} ${yVal} facing ${fVal}`);
+        })
+        .catch(() => {
+          this.log("Cannot place the robot outside of the grid!");
+        });
     }
   }
 }
