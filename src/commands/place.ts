@@ -28,11 +28,11 @@ export default class Place extends Command {
   ];
 
   async run() {
+    // accepts arguments only for testing purposes, as a workaround for inquirer testing
     const { args } = this.parse(Place);
     const xVal = parseInt(args.xCoord, 8);
     const yVal = parseInt(args.yCoord, 8);
     const fVal = String(args.facing);
-    this.log(`currently ${xVal} ${yVal} facing ${fVal}`);
     if (xVal <= 4 && yVal <= 4 && fVal !== null) {
       moveHistoryAPI.clearall();
       moveHistoryAPI.add(xVal, yVal, fVal);

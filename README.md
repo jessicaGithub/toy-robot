@@ -1,6 +1,8 @@
 # Toy-Robot
 
 Command line toy robot simulator
+Built with Oclif - TypeScript + Mocha
+First time using these tools, it was fun
 
 - [Usage](#usage)
 - [Commands](#commands)
