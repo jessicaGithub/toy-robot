@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "author": "jessicaGithub @jessicaGithub",
   "bin": {
+    "robot": "./bin/run",
     "hello": "./bin/runhello.js",
     "place": "./bin/runplace.js",
     "move": "./bin/runmove.js",

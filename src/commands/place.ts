@@ -32,10 +32,11 @@ export default class Place extends Command {
     const xVal = parseInt(args.xCoord, 8);
     const yVal = parseInt(args.yCoord, 8);
     const fVal = String(args.facing);
+    this.log(`currently ${xVal} ${yVal} facing ${fVal}`);
     if (xVal <= 4 && yVal <= 4 && fVal !== null) {
       moveHistoryAPI.clearall();
-      moveHistoryAPI.add(0, 0, "NORTH");
-      this.log(`I am now at 0 0 facing NORTH`);
+      moveHistoryAPI.add(xVal, yVal, fVal);
+      this.log(`I am now at ${xVal} ${yVal} facing ${fVal}`);
     } else {
       let xVal;
       let yVal;

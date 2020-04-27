@@ -14,4 +14,11 @@ describe("place", () => {
     .it("runs toy-robot place", (ctx) => {
       expect(ctx.stdout).to.include("I am now at 0 0 facing NORTH");
     });
+
+  test
+    .stdout()
+    .command(["place", "0", "4", "NORTH"])
+    .it("runs robot place", (ctx) => {
+      expect(ctx.stdout).to.include("I am now at 0 4 facing NORTH");
+    });
 });

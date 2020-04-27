@@ -27,7 +27,7 @@ describe("valid move after placing the robot", () => {
   test
     .stdout()
     .command(["place", "0", "0", "NORTH"])
-    .it("runs toy-robot place", (ctx) => {
+    .it("runs place", (ctx) => {
       expect(ctx.stdout).to.include("I am now at 0 0 facing NORTH");
     });
 
@@ -46,11 +46,10 @@ describe("invalid move after placing the robot", () => {
     .it("runs hello", (ctx) => {
       expect(ctx.stdout).to.include("");
     });
-
   test
     .stdout()
     .command(["place", "0", "4", "NORTH"])
-    .it("runs toy-robot place", (ctx) => {
+    .it("runs robot place", (ctx) => {
       expect(ctx.stdout).to.include("I am now at 0 4 facing NORTH");
     });
 
